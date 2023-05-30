@@ -1,3 +1,8 @@
+# for consistenty
+
+@alias is_odd isodd
+@alias is_even iseven
+
 # for backwards compatibility
 @alias iscompatible is_compatible
 @alias isconstant is_constant
