@@ -14,9 +14,6 @@ using Preferences
 
 using Test # for "interface-conformance" functions
 
-import GroupsCore
-import GroupsCore: gens, ngens, order, mul!, istrivial
-
 # A list of all symbols external packages should not import from AbstractAlgebra
 const import_exclude = [:import_exclude, :QQ, :ZZ,
                   :RealField, :number_field,
@@ -312,10 +309,7 @@ export is_empty, is_even, is_equal, is_finite, is_inf, is_integer, is_less, is_o
 @alias is_valid isvalid
 @alias is_zero iszero
 
-# alternative names for some functions from GroupsCore
 export is_trivial
-
-@alias is_trivial istrivial
 
 # alternative names for some functions from LinearAlgebra
 export is_diagonal, is_hermitian, is_symmetric, is_upper_triangular, is_lower_triangular
@@ -1263,10 +1257,7 @@ getindex(R::Union{Tuple{PolyRing, PolyRingElem}, Tuple{NCPolyRing, NCPolyRingEle
 #
 ################################################################################
 
-# Unfortunately `Group` is not a subtype of Set because we derive it from the
-# GroupsCore package (oh, if only Julia allowed inheritance from multiple
-# abstract types...)
-getindex(S::Union{Set, Group}, i::Int) = gen(S, i)
+getindex(S::Set, i::Int) = gen(S, i)
 
 ###############################################################################
 #
