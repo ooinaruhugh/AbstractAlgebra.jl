@@ -40,7 +40,13 @@ function order(::Type{T}, G::Group) where T
     throw(NotImplementedError(:order, G))
 end
 
+# if no return type has been specified, default to `BigInt`
+# FIXME: in Nemo we will want to replace them by using ZZRingElem instead;
+# that then will be "type piracy". Which we could avoid by dropping these methods
+# here ...
 order(G::Group) = order(BigInt, G)
+order(g::GroupElem) = order(BigInt, g)
+
 
 @doc raw"""
     is_trivial(G::Group)

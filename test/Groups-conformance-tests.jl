@@ -27,7 +27,7 @@ function test_Group_interface(G::Group)
 #                    @test eltype(G) <: GroupElem
 #                    @test one(G) isa eltype(G)
 #
-#                    if hasgens(G)
+#                    if AbstractAlgebra.hasgens(G)
 #                        @test first(iterate(G)) isa eltype(G)
 #                        _, s = iterate(G)
 #                        @test first(iterate(G, s)) isa eltype(G)
@@ -38,9 +38,9 @@ function test_Group_interface(G::Group)
 #        end
 
         @testset "Group generators" begin
-            @test hasgens(G) isa Bool
+            @test AbstractAlgebra.hasgens(G) isa Bool
 
-            if hasgens(G)
+            if AbstractAlgebra.hasgens(G)
                 @test ngens(G) isa Int
                 @test gens(G) isa AbstractVector{eltype(G)}
                 @test length(gens(G)) == ngens(G)

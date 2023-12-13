@@ -232,6 +232,7 @@ export FracField
 export FreeAssAlgebra
 export FreeAssAlgElem
 export FunctionalMap
+export Group
 export GroupElem
 export hgcd
 export Ideal
@@ -310,6 +311,7 @@ export is_empty, is_even, is_equal, is_finite, is_inf, is_integer, is_less, is_o
 @alias is_zero iszero
 
 export is_trivial
+function order end
 
 # alternative names for some functions from LinearAlgebra
 export is_diagonal, is_hermitian, is_symmetric, is_upper_triangular, is_lower_triangular
