@@ -3413,3 +3413,14 @@ function subst(f::PolyRingElem{T}, a::U) where {T <: RingElement, U}
    end
    return s
 end
+
+###############################################################################
+#
+#   Ideal constructor
+#
+###############################################################################
+
+ideal(R::PolyRing, g::Vector{<:RingElement}) = Generic.Ideal(R, g)
+ideal(R::PolyRing, v::T, vs::T...) where T <: RingElement = Generic.Ideal(R,[v,vs...])
+ideal(R::PolyRing) = Generic.Ideal(R)
+ideal(R::PolyRing, V::Vector{Any})  = Generic.Ideal(R, V)
