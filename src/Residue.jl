@@ -479,3 +479,5 @@ function quo(R::Ring, a::RingElement; cached::Bool = true)
    return S, f
 end
 
+#TODO docstring
+quo(R::Ring, I::Ideal) = quo(R, gens(I) |> gcd)
