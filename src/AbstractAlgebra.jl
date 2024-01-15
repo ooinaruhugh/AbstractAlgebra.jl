@@ -237,6 +237,7 @@ export FreeAssAlgElem
 export FunctionalMap
 export GroupElem
 export hgcd
+export ideal
 export Ideal
 export IdealSet
 export IdentityMap
